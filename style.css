@@ -1,8 +1,8 @@
 body {
-  background: #1e90ff	;
+  background: #38b48b;
 }
 
-.dog__ear:before, .dog__ear:after, .dog__eye:before, .dog__eye:after, .dog__beard:before, .dog__beard:after {
+.dog__ear:before, .dog__ear:after, .dog__eye:before, .dog__eye:after, .dog__nose:before, .dog__nose:after, .dog__mouth:before {
   position: absolute;
   content: "";
   display: block;
@@ -29,16 +29,14 @@ body {
 .dog__ear:before {
   left: -5px;
   border-radius: 30px 0 90px 30px;
-  box-shadow: 0 9px inset #CEA44E, 0 -40px inset #CEA44E;
-  -webkit-animation: ear-l infinite 7s;
+  box-shadow: 0 9px inset #a95a22, 0 -40px inset #a95a22;
   animation: ear-l infinite 7s;
 }
 
 .dog__ear:after {
   right: -5px;
   border-radius: 0 30px 30px 90px;
-  box-shadow: 0 9px inset #CEA44E, 4px -32px inset #CEA44E;
-  -webkit-animation: ear-r infinite 7s;
+  box-shadow: 0 9px inset #a95a22, 4px -32px inset #a95a22;
   animation: ear-r infinite 7s;
 }
 
@@ -48,8 +46,8 @@ body {
   width: 190px;
   height: 135px;
   border-radius: 100px 100px 50px 50px;
-  background: #f3be56;
-  box-shadow: 100px -30px 0 #fff inset;
+  background: #a95a22;
+  box-shadow: 100px -20px 0 #fff inset;
 }
 
 .dog__eye {
@@ -60,175 +58,290 @@ body {
 .dog__eye:before, .dog__eye:after {
   top: 75px;
   left: 45px;
-  width: 13px;
-  height: 13px;
-  border-radius: 0 13px 5px 13px;
-  background: #00123e;
+  width: 18px;
+  height: 28px;
+  border-radius: 30px 30px 30px 30px / 50px 50px 50px 50px;
+  background: #1a1a1a;
 }
 
 .dog__eye:after {
   right: 45px;
   left: auto;
-  border-radius: 13px 0 13px 5px;
-  -webkit-animation: blink-r infinite 7s;
-  animation: blink-r infinite 7s;
+  animation: eye-r infinite 7s;
 }
 
 .dog__eye:before {
-  -webkit-animation: blink-l infinite 7s;
-  animation: blink-l infinite 7s;
+  animation: eye-l infinite 7s;
 }
 
-.dog__beard:before, .dog__beard:after {
-  bottom: 40px;
-  left: -5px;
-  -webkit-transform: rotate(5deg);
-  -ms-transform: rotate(5deg);
-  transform: rotate(5deg);
-  width: 30px;
-  height: 2px;
-  box-shadow: 0 8px #000, 0 16px #000;
-  background: #000;
-}
-
-.dog__beard:after {
-  right: -5px;
-  left: auto;
-  -webkit-transform: rotate(-5deg);
-  -ms-transform: rotate(-5deg);
-  transform: rotate(-5deg);
+.dog__nose {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 10px);
+  width: 20px;
+  height: 16px;
+  border-radius: 10px 10px 20px 20px;
+  background: #1a1a1a;
 }
 
 .dog__mouth {
   position: absolute;
-  bottom: 30px;
-  left: calc(50% - 3px);
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #000;
+  bottom: -20px;
+  left: calc(50% - 14px);
+  width: 28px;
+  height: 36px;
+  border: 1px solid #606060;
+  border-radius: 12px;
+  background: #de5d74;
+  animation: mouth infinite 7s;
 }
 
-@-webkit-keyframes blink-l {
+.dog__mouth:before {
+  left: 50%;
+  width: 1px;
+  height: 26px;
+  background: #606060;
+}
+
+@keyframes eye-l {
   0% {
-    -webkit-transform: rotate(-8deg) scaleY(1);
     transform: rotate(-8deg) scaleY(1);
   }
   1% {
-    -webkit-transform: rotate(-8deg) scaleY(0);
     transform: rotate(-8deg) scaleY(0);
   }
   2% {
-    -webkit-transform: rotate(-8deg) scaleY(1);
     transform: rotate(-8deg) scaleY(1);
   }
   50% {
-    -webkit-transform: rotate(-8deg) scaleY(1);
     transform: rotate(-8deg) scaleY(1);
   }
   51% {
-    -webkit-transform: rotate(-8deg) scaleY(0);
     transform: rotate(-8deg) scaleY(0);
   }
   52% {
-    -webkit-transform: rotate(-8deg) scaleY(1);
     transform: rotate(-8deg) scaleY(1);
   }
   53% {
-    -webkit-transform: rotate(-8deg) scaleY(1);
     transform: rotate(-8deg) scaleY(1);
   }
   54% {
-    -webkit-transform: rotate(-8deg) scaleY(0);
     transform: rotate(-8deg) scaleY(0);
   }
   55% {
-    -webkit-transform: rotate(-8deg) scaleY(1);
     transform: rotate(-8deg) scaleY(1);
   }
   100% {
-    -webkit-transform: rotate(-8deg) scaleY(1);
     transform: rotate(-8deg) scaleY(1);
   }
 }
 
-@keyframes blink-r {
+@keyframes eye-r {
   0% {
-    -webkit-transform: rotate(8deg) scaleY(1);
-    transform: rotate(8deg) scaleY(1); }
+    transform: rotate(8deg) scaleY(1);
+  }
   1% {
-    -webkit-transform: rotate(8deg) scaleY(0);
-    transform: rotate(8deg) scaleY(0); }
+    transform: rotate(8deg) scaleY(0);
+  }
   2% {
-    -webkit-transform: rotate(8deg) scaleY(1);
-    transform: rotate(8deg) scaleY(1); }
+    transform: rotate(8deg) scaleY(1);
+  }
   50% {
-    -webkit-transform: rotate(8deg) scaleY(1);
-    transform: rotate(8deg) scaleY(1); }
+    transform: rotate(8deg) scaleY(1);
+  }
   51% {
-    -webkit-transform: rotate(8deg) scaleY(0);
-    transform: rotate(8deg) scaleY(0); }
+    transform: rotate(8deg) scaleY(0);
+  }
   52% {
-    -webkit-transform: rotate(8deg) scaleY(1);
-    transform: rotate(8deg) scaleY(1); }
+    transform: rotate(8deg) scaleY(1);
+  }
   53% {
-    -webkit-transform: rotate(8deg) scaleY(1);
-    transform: rotate(8deg) scaleY(1); }
+    transform: rotate(8deg) scaleY(1);
+  }
   54% {
-    -webkit-transform: rotate(8deg) scaleY(0);
-    transform: rotate(8deg) scaleY(0); }
+    transform: rotate(8deg) scaleY(0);
+  }
   55% {
-    -webkit-transform: rotate(8deg) scaleY(1);
-    transform: rotate(8deg) scaleY(1); }
+    transform: rotate(8deg) scaleY(1);
+  }
   100% {
-    -webkit-transform: rotate(8deg) scaleY(1);
-    transform: rotate(8deg) scaleY(1); }
+    transform: rotate(8deg) scaleY(1);
+  }
 }
 
-@-webkit-keyframes ear-l {
+@keyframes ear-l {
   0% {
-    -webkit-transform: rotate(-100deg);
-    transform: rotate(-100deg); }
+    transform: rotate(-100deg);
+  }
   1% {
-    -webkit-transform: rotate(-110deg);
-    transform: rotate(-110deg); }
+    transform: rotate(-110deg);
+  }
   2% {
-    -webkit-transform: rotate(-100deg);
-    transform: rotate(-100deg); }
+    transform: rotate(-100deg);
+  }
+  20% {
+    transform: rotate(-100deg);
+  }
+  24% {
+    transform: rotate(-110deg);
+  }
+  26% {
+    transform: rotate(-100deg);
+  }
+  40% {
+    transform: rotate(-100deg);
+  }
+  41% {
+    transform: rotate(-110deg);
+  }
+  42% {
+    transform: rotate(-100deg);
+  }
   60% {
-    -webkit-transform: rotate(-100deg);
-    transform: rotate(-100deg); }
+    transform: rotate(-100deg);
+  }
   64% {
-    -webkit-transform: rotate(-110deg);
-    transform: rotate(-110deg); }
+    transform: rotate(-110deg);
+  }
   66% {
-    -webkit-transform: rotate(-100deg);
-    transform: rotate(-100deg); }
+    transform: rotate(-100deg);
+  }
+  80% {
+    transform: rotate(-100deg);
+  }
+  81% {
+    transform: rotate(-110deg);
+  }
+  82% {
+    transform: rotate(-100deg);
+  }
   100% {
-    -webkit-transform: rotate(-100deg);
-    transform: rotate(-100deg); }
+    transform: rotate(-100deg);
+  }
 }
 
 @keyframes ear-r {
   0% {
-    -webkit-transform: rotate(100deg);
-    transform: rotate(100deg); }
+    transform: rotate(100deg);
+  }
   1% {
-    -webkit-transform: rotate(110deg);
-    transform: rotate(110deg); }
+    transform: rotate(110deg);
+  }
   2% {
-    -webkit-transform: rotate(100deg);
-    transform: rotate(100deg); }
+    transform: rotate(100deg);
+  }
   60% {
-    -webkit-transform: rotate(100deg);
-    transform: rotate(100deg); }
+    transform: rotate(100deg);
+  }
   64% {
-    -webkit-transform: rotate(110deg);
-    transform: rotate(110deg); }
+    transform: rotate(110deg);
+  }
   66% {
-    -webkit-transform: rotate(100deg);
-    transform: rotate(100deg); }
+    transform: rotate(100deg);
+  }
   100% {
-    -webkit-transform: rotate(100deg);
-    transform: rotate(100deg); }
+    transform: rotate(100deg);
+  }
+}
+
+@keyframes ear-r {
+  0% {
+    transform: rotate(100deg);
+  }
+  1% {
+    transform: rotate(110deg);
+  }
+  2% {
+    transform: rotate(100deg);
+  }
+  20% {
+    transform: rotate(100deg);
+  }
+  24% {
+    transform: rotate(110deg);
+  }
+  26% {
+    transform: rotate(100deg);
+  }
+  40% {
+    transform: rotate(100deg);
+  }
+  41% {
+    transform: rotate(110deg);
+  }
+  42% {
+    transform: rotate(100deg);
+  }
+  60% {
+    transform: rotate(100deg);
+  }
+  64% {
+    transform: rotate(110deg);
+  }
+  66% {
+    transform: rotate(100deg);
+  }
+  80% {
+    transform: rotate(100deg);
+  }
+  81% {
+    transform: rotate(110deg);
+  }
+  82% {
+    transform: rotate(100deg);
+  }
+  100% {
+    transform: rotate(100deg);
+  }
+}
+
+@keyframes mouth {
+  0% {
+    transform: rotate(-8deg);
+  }
+  4% {
+    transform: rotate(8deg);
+  }
+  6% {
+    transform: rotate(-8deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  24% {
+    transform: rotate(8deg);
+  }
+  26% {
+    transform: rotate(-8deg);
+  }
+  40% {
+    transform: rotate(-8deg);
+  }
+  44% {
+    transform: rotate(8deg);
+  }
+  46% {
+    transform: rotate(-8deg);
+  }
+  60% {
+    transform: rotate(-8deg);
+  }
+  64% {
+    transform: rotate(8deg);
+  }
+  66% {
+    transform: rotate(-8deg);
+  }
+  80% {
+    transform: rotate(-8deg);
+  }
+  84% {
+    transform: rotate(8deg);
+  }
+  86% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(-8deg);
+  }
 }
